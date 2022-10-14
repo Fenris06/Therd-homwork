@@ -135,19 +135,24 @@ public class TaskManager {
     public void updateSubTask(SubTask subTask) {
         if (subTasks.get(subTask.getId()) != null) {// доделать
             subTasks.put(subTask.getId(), subTask);
-
+            int epicId = subTask.getEpicId();
+            Epic epic = epics.get(epicId);
+            updateEpicStatus(epic);
         }
     }
 
-    public SubTask epicSubTaskList(int id) {
+    public ArrayList<SubTask> epicSubTaskList(int id) {
         Epic epicSubTaskList = epics.get(id);
-        for (Integer subTaskId : epicSubTaskList.getSubTaskIds()) {
-            subTasks.get(subTaskId);
-        }
-        return
+        ArrayList<SubTask> subTask = new ArrayList<>();
+        if (epicSubTaskList != null) {
+            for (Integer subTaskId : epicSubTaskList.getSubTaskIds()) {
+                subTask.add(subTasks.get(subTaskId));
+            }
+        }       return subTask;
     }
 
 
 }
+
 
 

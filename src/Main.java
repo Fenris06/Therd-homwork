@@ -46,7 +46,9 @@ public class Main {
         SubTask subTask5 = new SubTask("Подготовка к перезду", 5, "Упаковать вещи", "DONE");
         SubTask subTask6 = new SubTask("Т.З 3", 6, "Написать код", "NEW");
 
-
+        subTask4.setEpicId(2);
+        subTask5.setEpicId(2);
+        subTask6.setEpicId(3);
         taskManager.updateSubTask(subTask4);
         taskManager.updateSubTask(subTask5);
         taskManager.updateSubTask(subTask6);
@@ -54,6 +56,7 @@ public class Main {
         System.out.println("Таблица сабтасков после обновления  сабтасков " + taskManager.getSubTask());
         taskManager.deleteEpic(2);
         System.out.println("Таблица эпиков после удоления  эпика " + taskManager.getEpics());
-        System.out.println("Таблица сабтасков удоления  эпика " + taskManager.getSubTask());
+        System.out.println("Таблица сабтасков после удоления  эпика " + taskManager.getSubTask());
+        System.out.println("Таблица определенного эпика " + taskManager.epicSubTaskList(3));
     }
 }
