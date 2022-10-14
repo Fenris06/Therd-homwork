@@ -1,5 +1,4 @@
 package Manager;
-
 import Tasks.Epic;
 import Tasks.SubTask;
 import Tasks.Task;
@@ -136,11 +135,19 @@ public class TaskManager {
     public void updateSubTask(SubTask subTask) {
         if (subTasks.get(subTask.getId()) != null) {// доделать
             subTasks.put(subTask.getId(), subTask);
+
         }
     }
 
-    public void epicSubTaskList() {
+    public SubTask epicSubTaskList(int id) {
+        Epic epicSubTaskList = epics.get(id);
+        for (Integer subTaskId : epicSubTaskList.getSubTaskIds()) {
+            subTasks.get(subTaskId);
+        }
+        return
     }
 
 
 }
+
+
