@@ -1,5 +1,4 @@
 package Tasks;
-
 import java.util.Objects;
 
 public class Task {
@@ -7,6 +6,12 @@ public class Task {
     private int Id;
     private String specification;
     private String status;
+
+    public Task(String name, String specification, String status) {
+        this.name = name;
+        this.specification = specification;
+        this.status = status;
+    }
 
     public Task(String name, int Id, String specification, String status) {
         this.name = name;
@@ -72,3 +77,4 @@ public class Task {
                 '}';
     }
 }
+
